@@ -36,7 +36,9 @@ static NSArray *cacheDaysOfWeeks;
 }
 
 - (void)commonInit
-{    
+{
+    self.backgroundColor = self.calendarManager.calendarAppearance.weekDayBackgroundColor;
+    
     for(NSString *day in [self daysOfWeek]){
         UILabel *view = [UILabel new];
         
@@ -121,6 +123,8 @@ static NSArray *cacheDaysOfWeeks;
 
 - (void)reloadAppearance
 {
+    self.backgroundColor = self.calendarManager.calendarAppearance.weekDayBackgroundColor;
+    
     for(int i = 0; i < self.subviews.count; ++i){
         UILabel *view = [self.subviews objectAtIndex:i];
         
